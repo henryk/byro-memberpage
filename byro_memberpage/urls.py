@@ -2,10 +2,8 @@ from django.conf.urls import include, url
 
 from . import views
 
-from django.conf.urls import include, url
-
 unprotected_urls = [
-    url(r'^memberpage$', views.TestView.as_view(), name='testview'),
+    url(r'^memberpage/(?P<secret_token>[^/]+)/$', views.MemberpageView.as_view(), name='memberpage.base'),
 ]
 
 urlpatterns = [

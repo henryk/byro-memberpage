@@ -1,8 +1,10 @@
-{% extends "office/base_headline.html" %}
+{% extends "office/base.html" %}
 {% load i18n %}
 
-{% block headline %}Test{% endblock %}
+{% block title %}{% blocktrans %}Member page{% endblocktrans %}{% endblock %}
+{% block headline %}{% blocktrans %}Personal member page{% endblocktrans %}{% endblock %}
+
 
 {% block content %}
-<p>Success.</p>
+<pre>{{member}}</pre>
 {% endblock %}
