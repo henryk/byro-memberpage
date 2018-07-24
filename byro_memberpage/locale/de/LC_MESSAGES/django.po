@@ -2,11 +2,89 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-07 19:01+0100\n"
+"POT-Creation-Date: 2018-07-24 15:11+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Henryk Plötz\n"
+"Last-Translator: Henryk Plötz <henryk@ploetzli.ch>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#: byro_memberpage/__init__.py:10
+msgid "Byro plugin for member-visible view"
+msgstr "Byro-Plugin für persönliche Mitgliederseiten"
+
+#: byro_memberpage/__init__.py:12
+msgid ""
+"A byro plugin that allows each member to see information about their "
+"membership status. Login is via a specific secret link."
+msgstr ""
+"Ein Byro-Plugin welches eine persönliche Mitgliederseite bereitstellt über "
+"welche das Mitglied seine eigenen Daten einsehen kann. Zugriff geschieht "
+"über einen geheimen, mitgliederspezifischen Link."
+
+#: byro_memberpage/models.py:16
+msgid "Memberpage settings"
+msgstr "Einstellungen für \"Memberpage\"-Plugin"
+
+#: byro_memberpage/models.py:26
+msgid "Consent: Visible to other members"
+msgstr "Zustimmung: Sichtbar für andere Mitglieder"
+
+#: byro_memberpage/models.py:31
+msgid "Memberpage configuration"
+msgstr "Konfiguration für \"Memberpage\"-Plugin"
+
+#: byro_memberpage/models.py:35
+msgid "Members can see other members"
+msgstr "Mitglieder können andere Mitglieder sehen"
+
+#: byro_memberpage/templates/byro_memberpage/base.html:6
+msgid "Member page"
+msgstr "Mitgliederseite"
+
+#: byro_memberpage/templates/byro_memberpage/base.html:7
+msgid "Personal member page"
+msgstr "Persönliche Mitgliederseite"
+
+#: byro_memberpage/templates/byro_memberpage/base.html:23
+#, python-format
+msgid "Current membership active since %(start)s."
+msgstr "Aktuelle Mitgliedschaft aktiv seit %(start)s."
+
+#: byro_memberpage/templates/byro_memberpage/base.html:27
+msgid "No current active membership"
+msgstr "Keine aktuell aktive Mitgliedschaft"
+
+#: byro_memberpage/templates/byro_memberpage/base.html:49
+msgid "current balance"
+msgstr "aktueller Kontostand"
+
+#: byro_memberpage/templates/byro_memberpage/base.html:58
+msgid "donations"
+msgstr "Spenden"
+
+#: byro_memberpage/templates/byro_memberpage/base.html:64
+#, python-format
+msgid "%(count)s days"
+msgstr "%(count)s Tage"
+
+#: byro_memberpage/templates/byro_memberpage/base.html:70
+#, python-format
+msgid "or %(count)s years of membership"
+msgstr "oder %(count)s Jahre Mitglied"
+
+#: byro_memberpage/templates/byro_memberpage/base.html:74
+msgid "until this person becomes a member."
+msgstr "bis diese Person Mitglied wird."
+
+#: byro_memberpage/templates/byro_memberpage/base.html:79
+#, python-format
+msgid "Joined on %(start)s."
+msgstr "Beigetreten am %(start)s."
+
+#: byro_memberpage/templates/byro_memberpage/base.html:89
+msgid "membership fee"
+msgstr "Beitrag"
