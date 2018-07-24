@@ -1,0 +1,13 @@
+{% extends "byro_memberpage/base.html" %}
+{% load i18n %}
+
+{% block content %}
+{% with is_active=member.is_active %}
+{% include "byro_memberpage/member_card.html" %}
+
+<h4>{% trans "Finance details" %}</h4>
+{% include "office/member/finance_table.html" %}
+{% include "office/pagination.html" %}
+
+{% endwith %}
+{% endblock %}

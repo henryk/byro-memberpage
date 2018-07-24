@@ -1,0 +1,27 @@
+{% load i18n %}
+
+<div class="card mt-4 mb-4" style="width: 50rem;">
+    <div class="card-header member-name-container">
+        <div class="member-name">
+            <h4 class="card-title">{{member.name}}</h4>
+            <h5 class="card-subtitle mb-2 text-muted">
+                {% if is_active %}
+                    {% blocktrans with start=current_membership.start.isoformat trimmed %}
+                        Current membership active since {{ start }}.
+                    {% endblocktrans %}
+                {% else %}
+                    <span class="text-danger">{% blocktrans %}No current active membership{% endblocktrans %}</span>
+                {% endif %}
+            </h5>
+        </div>
+        {% if member.number %}
+            <div class="member-number">#
+                {{member.number}}
+            </div>
+        {% endif %}
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{member.email}}</p>
+        <address class="card-text" style="white-space: pre">{{member.address}}</address>
+    </div>
+</div>
