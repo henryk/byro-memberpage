@@ -7,4 +7,5 @@
 
 .card-header .member-number {
 	font-size: 200%;
+	white-space: nowrap;
 }

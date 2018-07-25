@@ -4,7 +4,7 @@ from . import views
 
 memberpage_urls = [
     url(r'^$', views.MemberpageView.as_view(), name='memberpage.dashboard'),
-    url(r'^finance$', views.MemberpageFinanceView.as_view(), name='memberpage.finance'),
+    url(r'^member_list$', views.MemberpageListView.as_view(), name='memberpage.list'),
 ]
 
 unprotected_urls = [
