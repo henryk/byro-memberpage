@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-25 17:26+0200\n"
+"POT-Creation-Date: 2018-07-25 18:38+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henryk Plötz <henryk@ploetzli.ch>\n"
 "Language-Team: \n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Memberpage settings"
 msgstr "Einstellungen für \"Memberpage\"-Plugin"
 
-#: byro_memberpage/models.py:26
+#: byro_memberpage/models.py:26 byro_memberpage/views.py:20
 msgid "Consent: Visible to other members"
 msgstr "Zustimmung: Sichtbar für andere Mitglieder"
 
@@ -64,42 +64,61 @@ msgstr "Aktuelle Mitgliedschaft aktiv seit %(start)s."
 msgid "No current active membership"
 msgstr "Keine aktuell aktive Mitgliedschaft"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:39
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:36
+msgid "Your basic information is visible to other members"
+msgstr "Ihre Basisinformationen sind für andere Mitglieder sichtbar"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:36
+msgid "Revoke consent"
+msgstr "Einwilligung widerrufen"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:38
+msgid "You are currently not visible to other members"
+msgstr "Sie sind zur Zeit für andere Mitglieder nicht sichtbar"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:38
+msgid ""
+"I hereby consent that other members may see my information in the member list"
+msgstr ""
+"Ich bin damit einverstanden, dass andere Mitglieder meine Daten in der "
+"Mitgliederliste einsehen können"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:51
 msgid "current balance"
 msgstr "aktueller Kontostand"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:48
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:60
 msgid "donations"
 msgstr "Spenden"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:54
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:66
 #, python-format
 msgid "%(count)s days"
 msgstr "%(count)s Tage"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:60
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:72
 #, python-format
 msgid "or %(count)s years of membership"
 msgstr "oder %(count)s Jahre Mitglied"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:64
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:76
 msgid "until this person becomes a member."
 msgstr "bis diese Person Mitglied wird."
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:69
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:81
 #, python-format
 msgid "First joined on %(start)s."
 msgstr "Erstmalig beigetreten am %(start)s."
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:79
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:91
 msgid "membership fee"
 msgstr "Beitrag"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:84
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:96
 msgid "Membership history"
 msgstr "MItgliedschaftsverlauf"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:96
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:108
 msgid "Finance details"
 msgstr "Finanzdetails"
 

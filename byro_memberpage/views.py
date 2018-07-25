@@ -1,15 +1,23 @@
 from datetime import timedelta
 
+from django import forms
 from django.db.models import Q
+from django.http import Http404, HttpResponseRedirect
+from django.urls import reverse
 from django.utils.timezone import now
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic import DetailView, ListView
+from django.views.generic.edit import FormMixin
 
 from byro.bookkeeping.models import Booking
 from byro.bookkeeping.special_accounts import SpecialAccounts
 from byro.members.models import Member
 
 from .models import MemberpageConfiguration, MemberViewLevel
-from django.http import Http404
+
+
+class MemberpageConsentForm(forms.Form):
+    visible_consent = forms.BooleanField(label=_('Consent: Visible to other members'), required=False)
 
 
 class MemberpageView(DetailView):
@@ -34,11 +42,17 @@ class MemberpageView(MemberpageView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         obj = context['member']
-        _now = now()
+        config = MemberpageConfiguration.get_solo()
+
+        context['memberpage_config'] = config
         context['bookings'] = self.get_bookings(obj)
+        context['member_view_level'] = MemberViewLevel
+
+        _now = now()
         memberships = obj.memberships.order_by('-start').all()
         if not memberships:
             return context
+
         first = memberships[0].start
         delta = timedelta()
         for ms in memberships:
@@ -52,6 +66,24 @@ class MemberpageView(MemberpageView):
             'first': first,
         }
         return context
+
+
+class MemberpageUpdateView(MemberpageView, FormMixin):
+    form_class = MemberpageConsentForm
+
+    def get_success_url(self):
+        return reverse(
+            'plugins:byro_memberpage:unprotected:memberpage.dashboard',
+            kwargs={'secret_token': self.kwargs['secret_token']}
+        )
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            self.object.profile_memberpage.visible_consent = form.cleaned_data['visible_consent']
+            self.object.profile_memberpage.save()
+        return HttpResponseRedirect(self.get_success_url())
 
 
 class MemberpageListView(ListView):
@@ -75,7 +107,7 @@ class MemberpageListView(ListView):
         secret_token = self.kwargs.get('secret_token')
         if not secret_token:
             raise Http404("Page does not exist")
-        
+
         member = Member.all_objects.filter(profile_memberpage__secret_token=secret_token).first()
         if not member:
             raise Http404("Page does not exist")
@@ -83,7 +115,4 @@ class MemberpageListView(ListView):
         if not member.is_active:
             raise Http404("Page does not exist")
 
-        return Member.objects.filter(profile_memberpage__visible_consent=True)
-
-
-
+        return Member.objects.filter(profile_memberpage__visible_consent=True).order_by('name')

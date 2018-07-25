@@ -28,6 +28,18 @@
         <p class="card-text">{{member.email}}</p>
         <address class="card-text" style="white-space: pre">{{member.address}}</address>
     </div>
+    {% if memberpage_config.can_see_other_members != member_view_level.NO %}
+    <div class="card-footer text-right">
+        <form method="POST" action="{% url 'plugins:byro_memberpage:unprotected:memberpage.update' secret_token=member.profile_memberpage.secret_token %}">
+            {% csrf_token %}
+            {% if member.profile_memberpage.visible_consent %}
+                <p>{% trans "Your basic information is visible to other members" %} <button type="submit" name="disable_consent" class="btn btn-secondary"><i class="fa fa-eye-slash"></i> {% trans 'Revoke consent' %}</button></p>
+            {% else %}
+                <p>{% trans "You are currently not visible to other members" %} <input type="hidden" name="visible_consent" value="1"><button type="submit" name="enable_consent" class="btn btn-success"><i class="fa fa-eye"></i> {% trans 'I hereby consent that other members may see my information in the member list' %}</button></p>
+            {% endif %}
+        </form>
+    </div>
+    {% endif %}
 </div>
 
 <div class="dashboard-list">

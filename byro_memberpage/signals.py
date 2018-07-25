@@ -1,12 +1,14 @@
 # Register your receivers here
 from django.dispatch import receiver
-from django.urls import resolve, reverse
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from byro.common.signals import unauthenticated_urls
-from byro.office.signals import nav_event
-from .models import MemberpageConfiguration, MemberViewLevel
 from byro.members.models import Member
+from byro.office.signals import nav_event
+
+from .models import MemberpageConfiguration, MemberViewLevel
+
 
 @receiver(unauthenticated_urls)
 def memberpage_unauthenticated_urls(sender, **kwargs):
