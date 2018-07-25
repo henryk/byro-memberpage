@@ -85,7 +85,7 @@
 {% for ms in memberships %}
     <div class="card mt-4" style="max-width: 20rem;">
         <div class="card-header">
-            <h5 class="card-title">{{ms.start.isoformat}} &mdash; {{ms.end.isoformat|default:_("&hellip;")}}</h4>
+            <h5 class="card-title">{{ms.start.isoformat}} &mdash; {{ms.end.isoformat|default:"&hellip;"}}</h4>
         </div>
         <div class="card-body">
             <p class="card-text">{{ms.amount}} {{ms.get_interval_display}}</p>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-24 23:42+0200\n"
+"POT-Creation-Date: 2018-07-25 17:26+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henryk Plötz <henryk@ploetzli.ch>\n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1\n"
 
 #: byro_memberpage/__init__.py:10
 msgid "Byro plugin for member-visible view"
@@ -41,56 +41,85 @@ msgstr "Konfiguration für \"Memberpage\"-Plugin"
 msgid "Members can see other members"
 msgstr "Mitglieder können andere Mitglieder sehen"
 
-#: byro_memberpage/signals.py:23
+#: byro_memberpage/signals.py:26
 #: byro_memberpage/templates/byro_memberpage/base.html:6
 msgid "Member page"
 msgstr "Mitgliederseite"
 
-#: byro_memberpage/signals.py:27
-#: byro_memberpage/templates/byro_memberpage/finance.html:8
-msgid "Finance details"
-msgstr "Finanzdetails"
+#: byro_memberpage/signals.py:35
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:4
+msgid "Member list"
+msgstr "Mitgliederliste"
 
 #: byro_memberpage/templates/byro_memberpage/base.html:7
 msgid "Personal member page"
 msgstr "Persönliche Mitgliederseite"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:14
-msgid "current balance"
-msgstr "aktueller Kontostand"
-
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:23
-msgid "donations"
-msgstr "Spenden"
-
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:29
-#, python-format
-msgid "%(count)s days"
-msgstr "%(count)s Tage"
-
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:35
-#, python-format
-msgid "or %(count)s years of membership"
-msgstr "oder %(count)s Jahre Mitglied"
-
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:39
-msgid "until this person becomes a member."
-msgstr "bis diese Person Mitglied wird."
-
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:44
-#, python-format
-msgid "Joined on %(start)s."
-msgstr "Beigetreten am %(start)s."
-
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:54
-msgid "membership fee"
-msgstr "Beitrag"
-
-#: byro_memberpage/templates/byro_memberpage/member_card.html:9
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:13
 #, python-format
 msgid "Current membership active since %(start)s."
 msgstr "Aktuelle Mitgliedschaft aktiv seit %(start)s."
 
-#: byro_memberpage/templates/byro_memberpage/member_card.html:13
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:17
 msgid "No current active membership"
 msgstr "Keine aktuell aktive Mitgliedschaft"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:39
+msgid "current balance"
+msgstr "aktueller Kontostand"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:48
+msgid "donations"
+msgstr "Spenden"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:54
+#, python-format
+msgid "%(count)s days"
+msgstr "%(count)s Tage"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:60
+#, python-format
+msgid "or %(count)s years of membership"
+msgstr "oder %(count)s Jahre Mitglied"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:64
+msgid "until this person becomes a member."
+msgstr "bis diese Person Mitglied wird."
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:69
+#, python-format
+msgid "First joined on %(start)s."
+msgstr "Erstmalig beigetreten am %(start)s."
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:79
+msgid "membership fee"
+msgstr "Beitrag"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:84
+msgid "Membership history"
+msgstr "MItgliedschaftsverlauf"
+
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:96
+msgid "Finance details"
+msgstr "Finanzdetails"
+
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:12
+msgid "Name"
+msgstr "Name"
+
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:14
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:15
+msgid "Address"
+msgstr "Adresse"
+
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:36
+#, python-format
+msgid ""
+"Another %(count)s members have not consented to their information being "
+"shared."
+msgstr ""
+"Es gibt weitere %(count)s Mitglieder, die aber der Weitergabe ihrer "
+"Informationen nicht zugestimmt haben."
