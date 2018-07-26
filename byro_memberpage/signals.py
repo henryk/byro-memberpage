@@ -47,16 +47,13 @@ def memberpage_primary(sender, **kwargs):
 
 @receiver(new_member_mail_information)
 def new_member_mail_info_memberpage(sender, signal, **kwargs):
-    # FIXME Absolute URLs?
     return _('Your personal member page is at {}').format(
-        reverse('plugins:byro_memberpage:unprotected:memberpage.dashboard',
-                kwargs={'secret_token': sender.profile_memberpage.secret_token}),
+        sender.profile_memberpage.get_url(),
     )
 
 
 @receiver(new_member_office_mail_information)
 def new_member_office_mail_info_memberpage(sender, signal, **kwargs):
     return _('Their personal member page is at {}').format(
-        reverse('plugins:byro_memberpage:unprotected:memberpage.dashboard',
-                kwargs={'secret_token': sender.profile_memberpage.secret_token}),
+        sender.profile_memberpage.get_url(),
     )

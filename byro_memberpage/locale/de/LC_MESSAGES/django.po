@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 11:49+0200\n"
+"POT-Creation-Date: 2018-07-26 23:50+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henryk Plötz <henryk@ploetzli.ch>\n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #: byro_memberpage/__init__.py:10
 msgid "Byro plugin for member-visible view"
@@ -37,7 +37,18 @@ msgstr "Zustimmung: Sichtbar für andere Mitglieder"
 msgid "Memberpage configuration"
 msgstr "Konfiguration für \"Memberpage\"-Plugin"
 
-#: byro_memberpage/models.py:47
+#: byro_memberpage/models.py:49
+msgid "External base URL of byro installation"
+msgstr "Externe Basis-URL der Byro-Installation"
+
+#: byro_memberpage/models.py:50
+msgid ""
+"This field is used to generate the absolute URL for memberpage addresses."
+msgstr ""
+"Dieses Feld wird verwendet, um den absolute URL für persönliche "
+"Mitgliederseiten zu generieren."
+
+#: byro_memberpage/models.py:54
 msgid "Members can see other members"
 msgstr "Mitglieder können andere Mitglieder sehen"
 
@@ -119,15 +130,15 @@ msgstr "bis diese Person Mitglied wird."
 msgid "First joined on %(start)s."
 msgstr "Erstmalig beigetreten am %(start)s."
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:91
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:92
 msgid "membership fee"
 msgstr "Beitrag"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:96
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:98
 msgid "Membership history"
 msgstr "MItgliedschaftsverlauf"
 
-#: byro_memberpage/templates/byro_memberpage/dashboard.html:108
+#: byro_memberpage/templates/byro_memberpage/dashboard.html:110
 msgid "Finance details"
 msgstr "Finanzdetails"
 
