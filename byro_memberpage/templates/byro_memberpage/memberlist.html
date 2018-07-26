@@ -1,11 +1,13 @@
 {% extends "byro_memberpage/base.html" %}
 {% load i18n %}
 
+{% block title %}{% trans "Member list" %}{% endblock %}
 {% block headline %}{% trans "Member list" %}{% endblock %}
 
 {% block content %}
 
 {% if memberpage_config.can_see_other_members != member_view_level.NO %}
+{% if members %}
 <table class="table table-sm">
     <thead>
         <tr>
@@ -28,11 +30,16 @@
         {% endfor %}
     </tbody>
 </table>
+{% else %}
+<div class="alert alert-primary">{% blocktrans trimmed %}
+Currently no members have consented to their information being shared.
+{% endblocktrans %}</div>
+{% endif %}
 {% endif %}
 
 {% include "office/pagination.html" %}
 
-{% if member_undisclosed %}
+{% if member_undisclosed and members %}
 <div class="alert alert-secondary">{% blocktrans with count=member_undisclosed trimmed %}
 Another {{count}} members have not consented to their information being shared.
 {% endblocktrans %}</div>

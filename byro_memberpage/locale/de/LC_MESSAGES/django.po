@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 10:49+0200\n"
+"POT-Creation-Date: 2018-07-26 11:49+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henryk Plötz <henryk@ploetzli.ch>\n"
 "Language-Team: \n"
@@ -48,6 +48,7 @@ msgstr "Mitgliederseite"
 
 #: byro_memberpage/signals.py:40
 #: byro_memberpage/templates/byro_memberpage/memberlist.html:4
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:5
 msgid "Member list"
 msgstr "Mitgliederliste"
 
@@ -130,19 +131,25 @@ msgstr "MItgliedschaftsverlauf"
 msgid "Finance details"
 msgstr "Finanzdetails"
 
-#: byro_memberpage/templates/byro_memberpage/memberlist.html:12
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:14
 msgid "Name"
 msgstr "Name"
 
-#: byro_memberpage/templates/byro_memberpage/memberlist.html:14
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:16
 msgid "E-mail"
 msgstr "E-Mail"
 
-#: byro_memberpage/templates/byro_memberpage/memberlist.html:15
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:17
 msgid "Address"
 msgstr "Adresse"
 
-#: byro_memberpage/templates/byro_memberpage/memberlist.html:36
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:34
+msgid "Currently no members have consented to their information being shared."
+msgstr ""
+"Gegenwärtig haben keine Mitglieder zugestimmt, dass ihre Informationen "
+"weitergegeben werden."
+
+#: byro_memberpage/templates/byro_memberpage/memberlist.html:43
 #, python-format
 msgid ""
 "Another %(count)s members have not consented to their information being "
