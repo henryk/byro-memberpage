@@ -28,7 +28,7 @@
         <p class="card-text">{{member.email}}</p>
         <address class="card-text" style="white-space: pre">{{member.address}}</address>
     </div>
-    {% if memberpage_config.can_see_other_members != member_view_level.NO %}
+    {% if memberpage_config.can_see_other_members != member_view_level.NO and is_active %}
     <div class="card-footer text-right">
         <form method="POST" action="{% url 'plugins:byro_memberpage:unprotected:memberpage.update' secret_token=member.profile_memberpage.secret_token %}">
             {% csrf_token %}
