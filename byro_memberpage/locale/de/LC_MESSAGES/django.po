@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-25 18:38+0200\n"
+"POT-Creation-Date: 2018-07-26 10:49+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henryk Plötz <henryk@ploetzli.ch>\n"
 "Language-Team: \n"
@@ -25,31 +25,39 @@ msgstr ""
 "welche das Mitglied seine eigenen Daten einsehen kann. Zugriff geschieht "
 "über einen geheimen, mitgliederspezifischen Link."
 
-#: byro_memberpage/models.py:16
+#: byro_memberpage/models.py:23
 msgid "Memberpage settings"
 msgstr "Einstellungen für \"Memberpage\"-Plugin"
 
-#: byro_memberpage/models.py:26 byro_memberpage/views.py:20
+#: byro_memberpage/models.py:38 byro_memberpage/views.py:20
 msgid "Consent: Visible to other members"
 msgstr "Zustimmung: Sichtbar für andere Mitglieder"
 
-#: byro_memberpage/models.py:31
+#: byro_memberpage/models.py:43
 msgid "Memberpage configuration"
 msgstr "Konfiguration für \"Memberpage\"-Plugin"
 
-#: byro_memberpage/models.py:35
+#: byro_memberpage/models.py:47
 msgid "Members can see other members"
 msgstr "Mitglieder können andere Mitglieder sehen"
 
-#: byro_memberpage/signals.py:26
+#: byro_memberpage/signals.py:31
 #: byro_memberpage/templates/byro_memberpage/base.html:6
 msgid "Member page"
 msgstr "Mitgliederseite"
 
-#: byro_memberpage/signals.py:35
+#: byro_memberpage/signals.py:40
 #: byro_memberpage/templates/byro_memberpage/memberlist.html:4
 msgid "Member list"
 msgstr "Mitgliederliste"
+
+#: byro_memberpage/signals.py:51
+msgid "Your personal member page is at {}"
+msgstr "Ihre persönliche Mitgliederseite ist {}"
+
+#: byro_memberpage/signals.py:59
+msgid "Their personal member page is at {}"
+msgstr "Die persönliche Mitgliederseite des Mitglieds ist {}"
 
 #: byro_memberpage/templates/byro_memberpage/base.html:7
 msgid "Personal member page"

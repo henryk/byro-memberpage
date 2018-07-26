@@ -5,6 +5,9 @@ from django.utils.translation import ugettext_lazy as _
 
 from byro.common.signals import unauthenticated_urls
 from byro.members.models import Member
+from byro.members.signals import (
+    new_member_mail_information, new_member_office_mail_information,
+)
 from byro.office.signals import nav_event
 
 from .models import MemberpageConfiguration, MemberViewLevel
@@ -40,3 +43,20 @@ def memberpage_primary(sender, **kwargs):
                     })
             return result
     return {}
+
+
+@receiver(new_member_mail_information)
+def new_member_mail_info_memberpage(sender, signal, **kwargs):
+    # FIXME Absolute URLs?
+    return _('Your personal member page is at {}').format(
+        reverse('plugins:byro_memberpage:unprotected:memberpage.dashboard',
+                kwargs={'secret_token': sender.profile_memberpage.secret_token}),
+    )
+
+
+@receiver(new_member_office_mail_information)
+def new_member_office_mail_info_memberpage(sender, signal, **kwargs):
+    return _('Their personal member page is at {}').format(
+        reverse('plugins:byro_memberpage:unprotected:memberpage.dashboard',
+                kwargs={'secret_token': sender.profile_memberpage.secret_token}),
+    )
