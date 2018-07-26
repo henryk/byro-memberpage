@@ -83,6 +83,7 @@
             {% endblocktrans %}
         </span>
     </div>
+    {% if is_active %}
     <div class="dashboard-block">
       <h1>
         {{ current_membership.amount }} €
@@ -91,6 +92,7 @@
         {% blocktrans %}membership fee{% endblocktrans %} <strong>{{ current_membership.get_interval_display }}</strong>
         </span>
     </div>
+    {% endif %}
 </div>
 {% endwith %}
 <h4 class="mt-4">{% trans "Membership history" %}</h4>
