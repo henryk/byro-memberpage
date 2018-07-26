@@ -1,5 +1,5 @@
 import os
-import urlparse
+from urllib.parse import urljoin
 
 from annoying.fields import AutoOneToOneField
 from django.db import models
@@ -47,7 +47,7 @@ class MemberpageProfile(models.Model):
             kwargs={'secret_token': self.secret_token}
         )
         if config.external_base_url:
-            return urlparse.urljoin(config.external_base_url, relative_url)
+            return urljoin(config.external_base_url, relative_url)
         else:
             return relative_url
 
